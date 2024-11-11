@@ -9,4 +9,5 @@ router.post('/registration', UserControlller.register);
 router.get('/token', tokenGenerator.tokenGenerator);
 router.get('/users/:id', users.ListUsers);
 router.post('/products', productCreate.createProducts);
+router.get('/products2', users.Products);
 module.exports = router;
