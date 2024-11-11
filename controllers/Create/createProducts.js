@@ -1,6 +1,6 @@
 const createProduct = require('../../models/products');
-
-exports.createProducts = async (res, req, next) => {
+const express = require('express');
+exports.createProducts = async (req, res, next) => {
     try {
         const { productName, description, price, discount, quantity, productType } = req.body;
         const newProduct = new createProduct({
@@ -14,7 +14,7 @@ exports.createProducts = async (res, req, next) => {
         await newProduct.save();
         res.status(201).json({ message: 'Product created successfully', newProduct });
     } catch (err) {
-        res.status(500).json({ message: 'Failed to create product', err });
+        res.status(500).json({ message: `${err}` });
         next(err);
     }
 }
