@@ -30,6 +30,10 @@ const products = schema.Schema({
         type: String,
         required: [true, 'Product type is required'],
         enum: ['Electronics', 'Clothing', 'Books', 'Home', 'Other'],
+    },
+    imgUrl: {
+        type: String,
+        required: [true, 'Image is required']
     }
 });
 
